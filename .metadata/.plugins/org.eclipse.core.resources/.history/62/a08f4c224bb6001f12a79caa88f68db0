@@ -1,0 +1,5 @@
+package com.springstartboot.bankapplication.model;
+
+public class Account {
+
+}

@@ -1,0 +1,5 @@
+package com.springstartboot.bankapplication.service;
+
+public class BankService {
+
+}

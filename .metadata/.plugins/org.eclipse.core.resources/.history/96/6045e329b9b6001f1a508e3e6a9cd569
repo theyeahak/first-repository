@@ -1,0 +1,22 @@
+package com.springstartboot.com.mockito;
+
+public class TrainingImp implements TrainingService{
+	
+	TrainingService ts;
+	public TrainingImp(TrainingService ts) 
+	{
+		
+		this.ts=ts;
+	}
+	
+	
+	@Override
+	public Training retrieveAll() {
+		
+		return null;
+	}
+	
+//	public String 
+	
+
+}

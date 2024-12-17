@@ -1,0 +1,60 @@
+package com.springstartboot.com.springstartbootapi.controllers;
+
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.springstartboot.com.springstartbootapi.classes.Question;
+import com.springstartboot.com.springstartbootapi.classes.Survey;
+import com.springstartboot.com.springstartbootapi.service.SurveyService;
+
+@RestController
+public class SurveyController {
+	private SurveyService service=new SurveyService();
+	
+	@RequestMapping("/surveys")
+	public List<Survey> retrieveAllSurvey()
+	{
+		
+		return service.retrieveAllSurveys();
+	}
+	
+	@RequestMapping("/surveys/{surveyId}")
+	public Survey retrieveSpecificSurvey(@PathVariable String surveyId)
+	{
+		return service.retrieveSpecificSurvey(surveyId);
+		
+	}
+	
+	 @RequestMapping("/surveys/{surveyId}/question")
+	    public List<Question> retrieveAllQuestions(@PathVariable String surveyId) {
+		 
+		 
+	        return service.retrieveAllQuestions(surveyId);
+	    }
+	 
+	 @RequestMapping("/surveys/{surveyId}/question/{questionId}")
+	 public Question retrieveSpecificQuestion(@PathVariable String surveyId, @PathVariable String questionId) {
+		 return service.retrieveSpecificQuestion(surveyId, questionId);
+	 }
+	 
+	 
+//	 @RequestMapping(value = "/surveys/{surveyId}/addquestion", method = RequestMethod.POST)
+//	 public ResponseEntity<String> postingQuestion(@PathVariable String surveyId, @RequestBody Question question) {
+//	     String responseMessage = "Question added to survey with ID: " + surveyId;
+//	     return ResponseEntity.ok(responseMessage);
+//	 }
+	 
+	 @PostMapping("/surveys/{surveyId}/addquestion")
+	 public ResponseEntity<String> postingQuestion(@PathVariable String surveyId, @RequestBody Question question) {
+	     String responseMessage = "Question added to survey with ID: " + surveyId;
+	     return ResponseEntity.ok(responseMessage);
+	 }
+
+}

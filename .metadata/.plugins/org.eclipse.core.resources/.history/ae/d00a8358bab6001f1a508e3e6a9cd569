@@ -1,0 +1,36 @@
+package com.springstartboot.com.mockito;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class TrainingImp implements TrainingService{
+	@Autowired
+	TrainingService ts;
+	
+	public TrainingImp() {
+		
+	}
+	
+	@Override
+	public Training retrieveAll() {
+		return new Training("Mercy");
+	}
+	
+	public String TrainerCheck() {
+		
+		
+		Training t=ts.retrieveAll();
+		if(t.getTrainerName().equalsIgnoreCase("Mercy"))
+		{
+			return "VOILA";
+		}
+		else {
+			
+			return " :( ";
+		}
+			
+			
+	
+	}
+	
+
+}

@@ -1,0 +1,15 @@
+package com.springstartboot.com.springstartbootJDBC.DAO;
+
+import com.springstartboot.com.springstartbootJDBC.model.FormulaOne;
+
+public interface F1DAO {
+	//public int create()
+	public int create();
+	public int insert(FormulaOne f1);
+	public int update(FormulaOne f1);
+	public int delete(int id);
+	public void find(int id);
+		
+	
+
+}

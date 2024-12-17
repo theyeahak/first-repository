@@ -1,0 +1,5 @@
+package com.springstartboot.bankapplication.repository;
+
+public interface BankRepo {
+
+}

@@ -1,0 +1,10 @@
+package com.springstartboot.com.springstartbootapi.exceptions;
+
+public class QuestionNotFoundException extends RuntimeException {
+
+	QuestionNotFoundException(String msg){
+		super(msg);
+	}
+	
+	
+}

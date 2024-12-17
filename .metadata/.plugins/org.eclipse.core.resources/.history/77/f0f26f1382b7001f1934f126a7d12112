@@ -1,0 +1,8 @@
+package com.springstartboot.com.springstartbootapi.exceptions;
+
+public class SurveyNotFoundException extends RuntimeException {
+	SurveyNotFoundException(String msg){
+		super(msg);
+	}
+
+}

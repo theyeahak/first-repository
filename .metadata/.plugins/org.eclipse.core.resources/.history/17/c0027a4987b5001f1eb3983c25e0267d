@@ -1,0 +1,5 @@
+package com.springstartboot.com.springstartbootRestJPA.service;
+
+public class MovieService {
+
+}

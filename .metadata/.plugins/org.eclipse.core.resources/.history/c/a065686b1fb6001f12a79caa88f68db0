@@ -1,0 +1,33 @@
+package com.springstartboot.com.springstartbootJDBC;
+
+import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import com.springstartboot.com.springstartbootJDBC.DAO.F1DAO;
+
+@SpringBootTest
+@RunWith(SpringRunner.class)
+class ApplicationTests {
+
+	@Autowired
+	private F1DAO dao;
+	
+	
+	@Test
+	void contextLoads() {
+	}
+	
+	@Test
+	public void testcreate() {
+		 String  cq = "CREATE TABLE FormulaOne (id INT PRIMARY KEY,teamName VARCHAR(255),driverName VARCHAR(255) )";
+	     dao.create(cq); 
+		// jdbctemp.execute(cq);
+	        System.out.println("f1 table created successfully.");
+	}
+	
+	
+
+}

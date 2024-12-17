@@ -1,0 +1,48 @@
+package com.springstartboot.bankapplication.service;
+
+import java.util.List;
+import java.util.Set;  // Import Set
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.springstartboot.bankapplication.model.Account;
+import com.springstartboot.bankapplication.model.Bank;
+import com.springstartboot.bankapplication.repository.BankRepo;
+
+@Service
+public class BankService {
+	@Autowired
+	BankRepo bankRepo;
+	// C R U D
+	
+	// C
+	public void addBank(Bank bank) {
+		if (bank.getAccounts() != null) {
+            for (Account account : bank.getAccounts()) {
+                account.setBank(bank);
+            }
+        }
+		bankRepo.save(bank);
+	}
+	
+	// R
+	public Set<Bank> getAllBank() {
+		return (Set<Bank>) bankRepo.findAll();
+	}
+	
+	// R
+	public Bank getBankById(int id) {
+		return bankRepo.findById(id).get();
+	}
+	
+	// U
+	public void updateBank(Bank bank) {
+		bankRepo.save(bank);
+	}
+	
+	// D
+	public void deleteBank(int id) {
+		bankRepo.deleteById(id);
+	}
+}

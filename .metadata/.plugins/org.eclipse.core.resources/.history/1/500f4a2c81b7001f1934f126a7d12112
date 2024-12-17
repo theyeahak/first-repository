@@ -1,0 +1,5 @@
+package com.springstartboot.com.springstartbootapi.exceptions;
+
+public class ErrorResponse {
+
+}

@@ -1,0 +1,23 @@
+package com.springstartboot.com.mockito;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class ApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+	
+	@Test
+	public void test() {
+		TrainingImp i=new TrainingImp();
+		String c=i.TrainerCheck();
+		assertEquals("voila",c,"VOILA");
+	}
+	
+
+}

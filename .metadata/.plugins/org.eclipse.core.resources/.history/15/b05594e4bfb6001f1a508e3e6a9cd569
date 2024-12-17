@@ -1,0 +1,43 @@
+package com.springstartboot.com.mockito;
+
+public class TrainingImp 
+	implements TrainingService{
+	
+//	private TrainingService ts;	
+//	public TrainingImp(TrainingService ts) {
+//	
+//		this.ts = ts;
+//	}
+//	
+//	public TrainingImp() {
+//		//this.ts=this;
+//		
+//	}
+
+
+
+	@Override
+	public Training retrieveAll() {
+		return new Training("Mercy");
+	}
+
+	
+	public String TrainerCheck() {
+		
+		
+		Training t=retrieveAll();
+		if(t.getTrainerName().equalsIgnoreCase("Mercy"))
+		{
+			return "VOILA";
+		}
+		else {
+			
+			return " :( ";
+		}
+			
+			
+	
+	}
+	
+
+}

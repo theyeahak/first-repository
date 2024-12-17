@@ -1,0 +1,5 @@
+package com.springstartboot.bankapplication.exceptions;
+
+public class AccountIdNotFoundException {
+
+}

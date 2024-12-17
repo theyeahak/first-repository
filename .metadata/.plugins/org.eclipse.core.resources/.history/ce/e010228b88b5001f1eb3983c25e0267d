@@ -1,0 +1,33 @@
+package com.springstartboot.com.springstartbootRestJPA.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.springstartboot.com.springstartbootRestJPA.model.Movie;
+import com.springstartboot.com.springstartbootRestJPA.repository.MovieRepository;
+
+@Service
+public class MovieService {
+	MovieRepository repo;
+	public  MovieService(MovieRepository repo) {
+		this.repo=repo;
+	}
+	//read ops of my movies
+	public List<Movie> getAllMovie(){
+		return repo.findAll();
+	}
+	//create new movies
+	public void addMovie(Movie movie) {
+		repo.save(movie);
+	}
+	//search by my primary key(movie id)
+	
+	public Movie getMovieById(int Id) {
+		
+		return repo.getById(Id);
+	}
+	
+	
+
+}
